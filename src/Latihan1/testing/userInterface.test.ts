@@ -26,6 +26,8 @@ describe('User Interface', () => {
             gender: 'other',
             id:'USR-X'
         }
-        console.info(userC) */
+        console.info(userC) 
+        expect(userC.gender).toBe("other")
+        */
     })
  })
