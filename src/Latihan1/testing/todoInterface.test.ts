@@ -2,7 +2,7 @@ import type { Todo } from "../code/todoInterface"
 
 describe('Todo Interface', () => { 
     it('Should support Array with Todo Interface', ()=> {
-        function showDone(todo: Todo[]){
+        function showDone(todo: Todo[]): number{
             return todo.filter(i => i.done).length
         }
         let data:Todo[] = [
