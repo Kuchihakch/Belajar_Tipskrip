@@ -1,11 +1,23 @@
 export class Customer{
     //deklarasikan prop terlebih dahulu
-    private _nama: string;
-    constructor(nama: string){
-        this._nama = nama;
+    //mandatory prop (wajib)
+    private id: string | number;
+    private nama: string;
+    //opt prop + default
+    private membership?: 'premium' | 'guest' = 'guest';
+    
+    constructor(id: string | number, nama: string){
+        this.id = id
+        this.nama = nama;
     }
-    getCustomerName(){
-        return this._nama;
+    getCustomerName(): string{
+        return this.nama;
+    }
+    getCustomerMembership(): string{
+        return this.membership ? this.membership : 'guest'
+    }
+    getCustomerInfo(): string{
+        return `[${this.id}] - [Nama]: ${this.nama}, [Membership]: ${this.membership}`
     }
 }
 
