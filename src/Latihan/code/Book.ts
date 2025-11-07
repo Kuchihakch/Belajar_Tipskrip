@@ -1,7 +1,13 @@
+interface BorrowAble{
+    borrowDate: string,
+    returnDate: string,
+    getBorrowInfo: ()=> string
+}
+
 export class Book{
     title: string;
     author: string;
-    year?: number;
+    private year?: number; //skrg private access vua set
     protected available: boolean = true; //visibility access only via set (private), protected -> via parent/child class
     constructor(title: string, author: string){
         this.title = title
@@ -17,5 +23,25 @@ export class Book{
         if(v !== this.available){
             this.available = v
         } //kalau false -> ganti false. kalau true tidak perlu
+    }
+    set tahunBuku(v:number){
+        if(v >= 2000){
+            this.year = v
+        }else{
+            this.year = 2000
+        }
+    }
+}
+
+export class BorrowedBook extends Book implements BorrowAble{
+    borrowDate: string;
+    returnDate: string;
+    constructor(title:string, author: string, borrowdate: string, returnDate: string){
+        super(title, author)
+        this.borrowDate = borrowdate;
+        this.returnDate = returnDate
+    }
+    getBorrowInfo():string{
+        return `[${this.title}] by ([${this.author}]) - dipinjam pada ${this.borrowDate}, dikembalikan pada ${this.returnDate}`
     }
 }
