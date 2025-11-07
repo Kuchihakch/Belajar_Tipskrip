@@ -5,13 +5,13 @@ interface BorrowAble{
 }
 
 export class Book{
-    title: string;
-    author: string;
+    /* title: string;
+    author: string; */
+    //definisi via param prop
     private year?: number; //skrg private access vua set
     protected available: boolean = true; //visibility access only via set (private), protected -> via parent/child class
-    constructor(title: string, author: string){
-        this.title = title
-        this.author = author
+    constructor(public title: string, public author: string){ //param properties -> menggantikan definisi param propeties
+    //definisi via param prop
     }
     get infoBuku():string{
         if(this.year){

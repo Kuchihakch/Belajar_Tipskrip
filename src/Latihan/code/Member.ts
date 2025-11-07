@@ -9,10 +9,10 @@ class Member{
 }
 
 export class PremiumMember extends Member{
-    premiumSince: number;
-    constructor(id:string, name: string ,premiumSince: number){
+    // premiumSince: number;
+    constructor(id:string, name: string , public premiumSince: number){
         super(id, name);
-        this.premiumSince = premiumSince
+        // this.premiumSince = premiumSince
     }
     get memberInfo():string{
         if(this.membership !== 'guest'){

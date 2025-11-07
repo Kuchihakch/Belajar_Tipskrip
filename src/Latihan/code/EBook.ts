@@ -1,10 +1,10 @@
 import { Book } from "./Book";
 
 export class EBook extends Book{
-    fileSize: number
-    constructor(title:string, author: string, fileSize:number){
+    // fileSize: number
+    constructor(title:string, author: string, public fileSize:number){
         super(title, author)
-        this.fileSize = fileSize
+        // this.fileSize = fileSize
     }
     override get infoBuku():string{
         return `${super.infoBuku}, ukuran: ${this.fileSize}MB`;
