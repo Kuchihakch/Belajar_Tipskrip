@@ -6,4 +6,10 @@ export class Box<T>{
     getContent(): T{
         return this.content
     }
+    getLength<T extends {length:number}>(val: T):number{
+        return val.length
+    }
+    toArray(...val: T[]): T[]{
+        return val
+    }
 }

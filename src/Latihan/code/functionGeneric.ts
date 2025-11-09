@@ -5,3 +5,7 @@ export function getLast<T>(val: T[]): T | undefined{
 export function mergeObj<T, U>(a: T, b: U): T & U{
     return {...a, ... b}
 }
+
+export function identity<T=string>(val?: T): T | string{
+    return val??'identitas kosong'
+}
